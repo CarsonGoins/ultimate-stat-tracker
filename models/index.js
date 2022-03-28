@@ -1,3 +1,4 @@
+// same evervytime
 // setting up sequelize database
 
 const fs = require("fs");
@@ -26,7 +27,7 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach(function (file) {
-    const model = require(path.join(__dirname, file));
+    var model = sequelize["import"](path.join(__dirname, file));
     db[model.name] = model;
   });
 
