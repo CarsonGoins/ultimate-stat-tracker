@@ -1,0 +1,59 @@
+<div id="rosterRow" class="row">
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each player}}
+          <tr>
+            <th scope="row">{{player_num}}</th>
+            <td>{{player_name}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <aside class="ms-5">
+      Is this your team?<br />
+      If so, enter your password:
+      <div class="form-outline mt-2">
+        <input type="password" id="form12" class="form-control" />
+        <label class="form-label" for="form12">Password</label>
+      </div>
+      <button
+        id="submitPass"
+        type="button"
+        class="btn btn-primary mt-2"
+      >Submit</button>
+    </aside>
+  </div>
+</div>
+  <body>
+    <div class="fixed-bottom">
+       <h2>Add a player</h2>
+    <form id="addPlayerForm">
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="playerName" class="form-control" />
+        <label class="form-label" for="playerName">Name: "John Doe"</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="playerNum" class="form-control" />
+        <label class="form-label" for="playerNum">Jersey #</label>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Submit button -->
+  <button id="addPlayerButton" type="submit" class="btn btn-primary btn-block mb-4">Add player</button>
+</form>
+    </div>
+<script src="/js/roster.js"></script>

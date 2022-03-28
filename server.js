@@ -1,3 +1,5 @@
+// always same format
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000; // if process enviromnet port or 5000 // works when deployed and locally
@@ -21,10 +23,12 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-const viewRoutes = require("./routes/viewRoutes.js");
-//const apiRoutes = require("./routes/apiRoutes.js")
+// const viewRoutes = require("./routes/viewRoutes.js");
+// const apiRoutes = require("./routes/apiRoutes.js");
 
-app.use(viewRoutes); // express using routes
+app.use("/", require("./routes/viewRoutes")); // require -> grabbing files
+app.use("/api", require("./routes/apiRoutes.js"));
+// app.use(viewRoutes); // express using routes
 // app.use(apiRoutes);
 
 db.sequelize.sync().then(() => {
