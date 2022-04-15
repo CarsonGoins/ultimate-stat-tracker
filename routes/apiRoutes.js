@@ -11,6 +11,34 @@ router.post("/teams", (request, response) => {
   });
 });
 
+router.post("/players", (request, response) => {
+  db.Player.create(request.body).then(() => {
+    response.send({ redirectTo: "/" });
+  });
+});
+
+router.put("/players", (request, response) => {
+  console.log(request.body);
+  db.Player.update(
+    {
+    assists: request.body.assists,
+    goals: request.body.goals,
+    blocks: request.body.blocks,
+    points_played: request.body.points_played
+  },
+  // update the row WHERE the player number and school ID match what was (REQUESTED) (the player in which the edit button was hit)
+  {
+    where: {
+    player_name: request.body.player_name,
+    school_id: request.body.school_id,
+    player_num: request.body.player_num
+  }}
+  ).then(() => {
+    console.log("response.req.body", response.req.body)
+    response.send({ message: "success"});
+  });
+});
+
 router.post("/team-password", (request, response) => {
   console.log(request.body.id);
   db.Team.findOne({ where: { id: parseInt(request.body.id) } }).then(

@@ -25,6 +25,7 @@ router.get("/add-team", (request, response) => {
   return response.render("addTeam");
 });
 
+
 router.get("/roster", (request, response) => {
   console.log("request.query.id", request.query.id);
   db.Player.findAll({ where: { school_id: parseInt(request.query.id) } }).then(

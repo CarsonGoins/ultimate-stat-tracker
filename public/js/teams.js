@@ -30,17 +30,4 @@ document.getElementById("addTeamForm").addEventListener("submit", (event) => {
     .then((data) => {
       window.location.href = data.redirectTo;
     });
-  //   (async () => {
-  //     const rawResponse = await fetch("/api/teams", {
-  //       method: "POST",
-  //       headers: {
-  //         Accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(newSchool),
-  //     });
-  //     const content = await rawResponse.json();
-
-  //     console.log(content);
-  //   })();
 });

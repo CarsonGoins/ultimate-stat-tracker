@@ -1,3 +1,15 @@
+<style>
+  section.section{
+    display: none;
+  }
+  .modal-body button{
+    padding: 7px 12px;
+  }
+  .statInput{
+    width: 55px;
+    text-align: center;
+  }
+</style>
 <div id="rosterRow" class="row">
   <div class="col-md-8">
     <table class="table">
@@ -34,7 +46,7 @@
   </div>
 </div>
   <body>
-    <div class="fixed-bottom">
+    <section class="section">
        <h2>Add a player</h2>
     <form id="addPlayerForm">
   <div class="row mb-4">
@@ -52,8 +64,55 @@
       
     </div>
   </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="goals" class="form-control" />
+    <label class="form-label" for="goals">Goals</label>
+  </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="assists" class="form-control" />
+    <label class="form-label" for="assists">Assists</label>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="blocks" class="form-control" />
+    <label class="form-label" for="blocks">Blocks</label>
+  </div>
+   <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="points_played" class="form-control" />
+    <label class="form-label" for="points_played">Points Played</label>
+  </div>
   <!-- Submit button -->
   <button id="addPlayerButton" type="submit" class="btn btn-primary btn-block mb-4">Add player</button>
 </form>
+</section>
+<div class="modal fade" id="editPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="playerModalInfo">Modal title</h5>
+        <button id="xClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p>Goals: <button class="btn btn-danger" data-target="modalGoals">-</button> <input id="modalGoals" class="statInput" type="text" value="2"> <button data-target="modalGoals" class="btn btn-success">+</button></p>
+          <p>Assists: <button class="btn btn-danger" data-target="modalAssists">-</button> <input id="modalAssists" class="statInput" type="text" value="2"> <button data-target="modalAssists" class="btn btn-success">+</button></p>
+          <p>Blocks: <button class="btn btn-danger" data-target="modalBlocks">-</button> <input id="modalBlocks" class="statInput" type="text" value="2"> <button data-target="modalBlocks" class="btn btn-success">+</button></p>
+          <p>Points Played: <button class="btn btn-danger"  data-target="modalPoints_played">-</button> <input id="modalPoints_played" class="statInput" type="text" value="2"> <button data-target="modalPoints_played" class="btn btn-success">+</button></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="saveStatButton" type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
+  </div>
+</div>
 <script src="/js/roster.js"></script>
