@@ -5,7 +5,6 @@ h2 {
   text-align: center;
 }
 .card1{
-  min-width: 300px;
   margin: 0;
   padding: 100px auto;
 }
@@ -22,8 +21,9 @@ h2 {
   padding: 20px 20px;
 }
 .card2 {
+  height: 90px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 13px;
   text-align: center;
   background-color: #f1f1f1;
 }
