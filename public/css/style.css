@@ -4,3 +4,34 @@
 h2 {
   text-align: center;
 }
+.card1{
+  min-width: 300px;
+  margin: 0;
+  padding: 100px auto;
+}
+.card1:after {
+  content: "";
+  display: table;
+  clear: both;
+  padding: 100px auto;
+}
+.column1 {
+  text-align: center;
+  float: left;
+  width: 25%;
+  padding: 20px 20px;
+}
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 1000px) {
+  .column1 {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

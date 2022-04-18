@@ -1,9 +1,18 @@
-<h2>Teams:</h2>
+<head>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body></body>
+<h2>Ultimate Frisbee Stat Tracker</h2>
 {{#each team}}
-<p>
+  <p>
     <a href="/roster?id={{id}}">
-{{school_name}}
-{{team_name}}
-</a>
-</p>
+<div class="card1">
+    <div class="column1">
+      <div class="card2">
+        <h5 class="card-title">{{school_name}}</h5>
+        <p class="card-text">{{team_name}}</p>
+    </div>
+  </div>
+    </a>
+  </p>
 {{/each}}
