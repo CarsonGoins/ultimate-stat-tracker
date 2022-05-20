@@ -25,6 +25,22 @@ router.get("/add-team", (request, response) => {
   return response.render("addTeam");
 });
 
+// router.get("/admin", (request, response) => {
+//   db.Team.findAll({}).then((dbTeam) => {
+//     const handlebarsObject = {
+//       team: dbTeam.map((data) => {
+//         return {
+//           team_name: data.team_name,
+//           school_name: data.school_name,
+//           school_abv: data.school_abv,
+//           id: data.id,
+//         };
+//       }),
+//     };
+//     return response.render("ustAdmin", handlebarsObject);
+//   });
+// });
+
 
 router.get("/roster", (request, response) => {
   console.log("request.query.id", request.query.id);

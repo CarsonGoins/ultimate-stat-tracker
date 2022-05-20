@@ -1,0 +1,72 @@
+<style>
+  section.section{
+    display: none;
+  }
+  .modal-body button{
+    padding: 7px 12px;
+  }
+  .statInput{
+    width: 55px;
+    text-align: center;
+  }
+  </style>
+
+<head>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body></body>
+<h2>Ultimate Frisbee Stat Tracker</h2>
+<div class="col-md-4">
+    <aside class="ms-5">
+      Enter admin password:
+      <div class="form-outline mt-2">
+        <input type="password" id="form122" class="form-control" />
+        <label class="form-label" for="form12">Password</label>
+      </div>
+      <button
+        id="submitPass2"
+        type="button"
+        class="btn btn-primary mt-2"
+      >Submit</button>
+    </aside>
+  </div>
+</div>
+<section class="section">
+       <h2>Remove a team</h2>
+    <form id="deleteTeamForm">
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="schoolN" class="form-control" />
+        <label class="form-label" for="schoolN">Team Name</label>
+      </div>
+            <div class="form-outline">
+        <input type="text" id="teamAbv" class="form-control" />
+        <label class="form-label" for="teamAbv">Team Abv</label>
+      </div>
+
+            <div class="form-outline">
+        <input type="text" id="teamPass" class="form-control" />
+        <label class="form-label" for="teamPass">Team pass</label>
+      </div>
+
+            <div class="form-outline">
+        <input type="text" id="teamId" class="form-control" />
+        <label class="form-label" for="teamId">Team Id</label>
+      </div>
+
+      <button id="deleteTeamButton" type="submit" class="btn btn-primary btn-block mb-4">Delete Team</button>
+    </div>
+{{#each team}}
+<div class="card1">
+    <div class="column1">
+      <div class="card2 align-items-stretch">
+        <h5 id="schoolName" class="card-title">{{school_name}}</h5>
+        <p class="card-text">{{team_name}}</p>
+          <button class="btn btn-danger" data-target="deleteTeam" id="deleteTeams">{{school_name}}</button>
+    <p id="temp"> </p>
+    </div>
+  </div>
+{{/each}}
+</section>
+<script src="/js/ustAdmin.js"></script>

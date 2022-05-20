@@ -79,4 +79,30 @@ router.get("/players", (request, response) => {
     return response.render("players", handlebarsObject);
   });
 });
+
+// router.put("/teams", (request, response) => {
+//   console.log(request.body);
+//   db.Team.update(
+//     {
+//     school_name: " ",
+//     school_Id: " ",
+//     school_pass: " ",
+//     school_Id: " ",
+//   },
+//   // update the row WHERE the player number and school ID match what was (REQUESTED) (the player in which the edit button was hit)
+//   {
+//     where: {
+//     school_Id: request.body.id,
+//   }}
+//   ).then(() => {
+//     console.log("response.req.body", response.req.body)
+//     response.send({ message: "success"});
+//   });
+// });
+
+
+// router.delete("/teams/:id", (request, response) => {
+// response.send(request.body.school);
+// });
+
 module.exports = router;
