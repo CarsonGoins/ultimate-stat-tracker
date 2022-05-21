@@ -3,10 +3,10 @@ document.getElementById("addPlayerForm").addEventListener("submit", (event) => {
   const player_name = document.getElementById("playerName").value;
   const player_num = document.getElementById("playerNum").value;
   const school_id = window.location.href.split("=").pop();
-  const goals = document.getElementById("goals").value;
-  const assists = document.getElementById("assists").value;
-  const blocks = document.getElementById("blocks").value;
-  const points_played = document.getElementById("points_played").value;
+  const goals = 0;
+  const assists = 0;
+  const blocks = 0;
+  const points_played = 0;
 
   const newPlayer = {
     player_name,
@@ -28,7 +28,7 @@ document.getElementById("addPlayerForm").addEventListener("submit", (event) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      window.location.href = data.redirectTo;
+      window.location.href = window.location.href;
     });
 });
 
@@ -58,6 +58,10 @@ document.getElementById("submitPass").addEventListener("click", (event) => {
       // If data is correct display this info
       else {
         document.getElementById("rosterRow").innerHTML = `
+        <div class="container-md vertical-center">
+        <button data-toggle="modal" type="button" data-target="#addPlayerModal" id="addPlayerModalButton" class="btn btn-primary mb-4s">Add Player
+        </button>
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -115,7 +119,7 @@ document.getElementById("form12").value = localStorage.getItem(
   window.location.href.split("=").pop()
 );
 
-if(document.getElementById("form12").value){
+if (document.getElementById("form12").value) {
   document.getElementById("submitPass").click();
 }
 
@@ -134,8 +138,10 @@ function populateModal(element) {
   document.getElementById("modalPoints_played").value =
     element.getAttribute("data-points");
 }
-const plusButtons = document.querySelectorAll("#editPlayerModal .btn-success");
-plusButtons.forEach((button) => {
+const additionButtons = document.querySelectorAll(
+  "#editPlayerModal .btn-success"
+);
+additionButtons.forEach((button) => {
   button.addEventListener("click", () => {
     document.getElementById(button.getAttribute("data-target")).value =
       parseInt(
@@ -197,8 +203,8 @@ document.getElementById("saveStatButton").addEventListener("click", (event) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if(data.message === "success"){
-        document.location.reload()
+      if (data.message === "success") {
+        document.location.reload();
       }
     });
 });

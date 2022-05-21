@@ -1,8 +1,22 @@
 #logo {
   font-family: "Courier New", monospace;
 }
+body{
+  margin-bottom: 50px;
+}
 h2 {
   text-align: center;
+}
+.marginT{
+  margin-top: 30px;
+}
+#addPlayerModalButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: sticky;
+  top: 0px;
 }
 .card1{
   margin: 0;
@@ -14,6 +28,17 @@ h2 {
   clear: both;
   padding: 100px auto;
 }
+.center{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.vertical-center {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  top: 0px;
+}
 .column1 {
   display: table;
   text-align: center;
@@ -21,6 +46,7 @@ h2 {
   width: 25%;
   padding: 20px 20px;
 }
+
 .card2 {
   min-width: 220px;
   height: 90px;
@@ -51,4 +77,18 @@ h2 {
     display: block;
     margin-bottom: 20px;
   }
+  #addPlayerModalButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    position: sticky;
+    top: 0px;
+  }
 }
+
+  .width{
+    width: 50%;
+  }
+
+

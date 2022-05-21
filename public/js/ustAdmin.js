@@ -1,7 +1,7 @@
 document.getElementById("submitPass2").addEventListener("click", (event) => {
     const passInput = document.getElementById("form122").value;
 
-    if(passInput === "y"){
+    if(passInput === ""){
         document.querySelector("section.section").style.display = "block";
     }
     else{
